@@ -1,0 +1,11 @@
+{"level":"error"}
+{"_message":"products validation failed","errors":{"owner":{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"admin\" (type string) at path \"owner\" because of \"BSONError\"","name":"CastError","path":"owner","reason":{},"stringValue":"\"admin\"","value":"admin","valueType":"string"}},"level":"error","message":"products validation failed: owner: Cast to ObjectId failed for value \"admin\" (type string) at path \"owner\" because of \"BSONError\"","name":"ValidationError"}
+{"_message":"products validation failed","errors":{"owner":{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"admin\" (type string) at path \"owner\" because of \"BSONError\"","name":"CastError","path":"owner","reason":{},"stringValue":"\"admin\"","value":"admin","valueType":"string"}},"level":"error","message":"products validation failed: owner: Cast to ObjectId failed for value \"admin\" (type string) at path \"owner\" because of \"BSONError\"","name":"ValidationError"}
+{"_message":"products validation failed","errors":{"owner":{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"admin\" (type string) at path \"owner\" because of \"BSONError\"","name":"CastError","path":"owner","reason":{},"stringValue":"\"admin\"","value":"admin","valueType":"string"}},"level":"error","message":"products validation failed: owner: Cast to ObjectId failed for value \"admin\" (type string) at path \"owner\" because of \"BSONError\"","name":"ValidationError"}
+{"_message":"products validation failed","errors":{"owner":{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"admin\" (type string) at path \"owner\" because of \"BSONError\"","name":"CastError","path":"owner","reason":{},"stringValue":"\"admin\"","value":"admin","valueType":"string"}},"level":"error","message":"products validation failed: owner: Cast to ObjectId failed for value \"admin\" (type string) at path \"owner\" because of \"BSONError\"","name":"ValidationError"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"code":"ERR_HTTP_HEADERS_SENT","level":"error"}
+{"code":"ERR_HTTP_HEADERS_SENT","level":"error"}
+{"code":"ERR_HTTP_HEADERS_SENT","level":"error"}

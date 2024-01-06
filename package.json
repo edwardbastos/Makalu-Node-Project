@@ -1,0 +1,58 @@
+{
+  "author": "",
+  "dependencies": {
+    "@faker-js/faker": "^8.2.0",
+    "bcrypt": "^5.1.1",
+    "commander": "^11.0.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-compression": "^1.0.2",
+    "express-handlebars": "^7.1.2",
+    "handlebars": "^4.7.8",
+    "jsonwebtoken": "^9.0.2",
+    "luxon": "^3.4.4",
+    "mongoose": "^7.4.5",
+    "mongoose-paginate-v2": "^1.7.4",
+    "multer": "^1.4.5-lts.1",
+    "nodemailer": "^6.9.7",
+    "passport": "^0.6.0",
+    "passport-github2": "^0.1.12",
+    "passport-google-oauth20": "^2.0.0",
+    "passport-jwt": "^4.0.1",
+    "passport-local": "^1.0.0",
+    "socket.io": "^4.7.2",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.0",
+    "twilio": "^4.19.3",
+    "winston": "^3.11.0"
+  },
+  "description": "",
+  "keywords": [],
+  "license": "ISC",
+  "main": "index.js",
+  "name": "project-ecommerce",
+  "nodemonConfig": {
+    "ignore": [
+      "**/*.test.js",
+      "**/*.spec.js",
+      ".git",
+      "node_modules"
+    ],
+    "delay": "2500"
+  },
+  "private": true,
+  "scripts": {
+    "dev": "nodemon src/app.js ",
+    "start": "node src/app.js",
+    "test": "mocha test/Users/dao/Users.test.js"
+  },
+  "type": "module",
+  "version": "1.0.0",
+  "devDependencies": {
+    "chai": "^4.3.10",
+    "mocha": "^10.2.0",
+    "supertest": "^6.3.3"
+  }
+}

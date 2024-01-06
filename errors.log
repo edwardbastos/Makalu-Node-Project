@@ -1,0 +1,15 @@
+{"level":"error","message":"Logger test"}
+{"level":"fatal","message":"Logger test fatal"}
+{"level":"error","message":"Logger test error"}
+{"level":"fatal","message":"Logger test fatal"}
+{"level":"error","message":"Logger test error"}
+{"level":"fatal","message":"Logger test fatal"}
+{"level":"error","message":"Logger test error"}
+{"level":"fatal","message":"Logger test fatal"}
+{"level":"error","message":"Logger test error"}
+{"level":"fatal","message":"Logger test fatal"}
+{"level":"fatal","message":"Logger test fatal"}
+{"level":"error","message":"Logger test error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}

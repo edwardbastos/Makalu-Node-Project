@@ -1,0 +1,71 @@
+components:
+  schemas:
+    Product:
+      type: object
+      properties:
+        id:
+          type: string
+          description: "El identificador del producto. Generado en la base de datos."
+        title:
+          type: string
+          description: "El nombre del producto. Es requerido."
+        description:
+          type: string
+          description: "La descripción del producto.Es requerida."
+        category:
+          type: string
+          description: "La categoría del producto. Marca Principal. Es requerida."
+        code:
+          type: string
+          description: "El Código del producto. Debe ser único. Es requerido."
+        price:
+          type: number
+          description: "El precio del producto. Es requerido."
+        stock:
+          type: number
+          description: "El stock del producto. Es requerido."
+        thumbnail:
+          type: string
+          description: "La imagen del producto. Es requerida."
+        status:
+          type: boolean
+          description: "El estado del producto."
+    User:
+      type: object
+      properties:
+        id:
+          type: string
+          description: "El identificador del usuario. Generado en la base de datos."
+        firstName:
+          type: string
+          description: "El nombre del usuario. Es requerido."
+        lastName:
+          type: string
+          description: "El apellido del usuario. Es requerido."
+        email:
+          type: string
+          description: "El correo del usuario. Es requerido. Debe ser único"
+        password:
+          type: string
+          description: "La contraseña del usuario. Es requerida."
+        role:
+          type: string
+          description: "El rol del usuario. Es requerido. Por defecto es 'user'."
+        cart:
+          $ref: "#/components/schemas/Cart"
+        active:
+          type: boolean
+          description: "El estado del usuario. Por defecto es 'true'."
+    Cart:
+      type: object
+      properties:
+        id:
+          type: string
+          description: "El identificador del carrito. Generado en la base de datos."
+        quantity:
+          type: number
+          description: "La cantidad del producto. Es requerida."
+        products:
+          type: array
+          items:
+            $ref: "#/components/schemas/Product"

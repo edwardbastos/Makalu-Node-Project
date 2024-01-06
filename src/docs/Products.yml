@@ -1,0 +1,151 @@
+paths:
+  /api/products:
+    get:
+      summary: Devuelve todos los productos de la base de datos.
+      tags:
+        - Products
+      responses:
+        "200":
+          description: Los productos se encontraron satisfactoriamente.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: Status de la petición.
+                  payload:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Product"
+
+        "500":
+          description: Error interno del servidor. Revisar que la conexión a la base de datos sea consistente.
+    post:
+      summary: Crea un nuevo producto en la base de datos.
+      tags:
+        - Products
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Product"
+      responses:
+        "201":
+          description: El producto fue creado satisfactoriamente.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: Status de la petición.
+                  payload:
+                    $ref: "#/components/schemas/Product"
+  /api/products/:pid:
+    get:
+      summary: Devuelve un producto de la base de datos.
+      tags:
+        - Products
+      parameters:
+        - name: pid
+          in: path
+          description: El identificador del producto. Generado en la base de datos.
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: El producto se encontro satisfactoriamente.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: Status de la petición.
+                  payload:
+                    $ref: "#/components/schemas/Product"
+
+        "500":
+          description: Error interno del servidor. Revisar que la aplicación a la base de datos sea consistente.
+    put:
+      summary: Actualiza un producto de la base de datos.
+      tags:
+        - Products
+      parameters:
+        - name: pid
+          in: path
+          description: El identificador del Producto. Generado en la base de datos.
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Product"
+      responses:
+        "200":
+          description: El Producto fue actualizado satisfactoriamente.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: Status de la petición.
+                  payload:
+                    $ref: "#/components/schemas/Product"
+    delete:
+      summary: Elimina un producto de la base de datos(lo deshabilita).
+      tags:
+        - Products
+      parameters:
+        - name: pid
+          in: path
+          description: El identificador del Producto. Generado en la base de datos.
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: El Producto fue eliminado satisfactoriamente.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: Status de la petición.
+                  payload:
+                    $ref: "#/components/schemas/Product"
+        "500":
+          description: Error interno del servidor. Revisar que la aplicación a la base de datos sea consistente.
+  /api/products/mockingproducts:
+    get:
+      summary: Devuelve un nuevo conjunto de 100 Productos falsos para pruebas.
+      tags:
+        - Products
+      responses:
+        "200":
+          description: Los Productos fueron creados satisfactoriamente.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: Status de la petición.
+                  payload:
+                    $ref: "#/components/schemas/Product"
+        "500":
+          description: Error interno del servidor. Revisar que la aplicación a la base de datos sea consistente.
