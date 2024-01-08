@@ -38,7 +38,7 @@
 }
 
 .back-box div {
-    margin: 100px 40px;
+    margin: 50px 50px;
     color: white;
     transition: all 500ms;
 }
@@ -63,8 +63,8 @@
 }
 
 .back-box div a {
-    flex-direction: column;
-    font-size: medium;
+    flex-direction: row;
+    font-size: 14px;
     text-decoration: none;
     color: white;
     margin-top: 5px;
@@ -87,6 +87,7 @@
     color: white;
     outline: none;
     transition: all 300ms;
+    margin-bottom: 20px;
 }
 
 .back-box div a button:hover {
@@ -110,7 +111,7 @@
 
 .container-login-register form {
     width: 100%;
-    padding: 50px 20px;
+    padding: 65px 20px;
     background: white;
     position: absolute;
     border-radius: 20px;
@@ -153,8 +154,8 @@
 }
 
 .btn {
-    width: 100%;
-    height: 20px;
+    width: 90%;
+    height: 5px;
     margin: 5px;
     border-radius: 10px;
     border: none;
