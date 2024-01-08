@@ -8,7 +8,6 @@ export default class PersistenceFactory {
     let CartsDao;
     let ProductsDao;
     let TicketsDao;
-    let ChatDao;
 
     switch (config.app.PERSISTENCE) {
       case "MEMORY": {
@@ -16,7 +15,6 @@ export default class PersistenceFactory {
         CartsDao = (await import("./memory/CartsDao.js")).default;
         ProductsDao = (await import("./memory/ProductsDao.js")).default;
         TicketsDao = (await import("./memory/TicketsDao.js")).default;
-        ChatDao = (await import("./memory/ChatDao.js")).default;
         break;
       }
       case "FS": {
@@ -24,7 +22,6 @@ export default class PersistenceFactory {
         CartsDao = (await import("./FS/CartsDao.js")).default;
         ProductsDao = (await import("./FS/ProductsDao.js")).default;
         TicketsDao = (await import("./FS/TicketsDao.js")).default;
-        ChatDao = (await import("./FS/ChatDao.js")).default;
         break;
       }
       case "MONGO": {
@@ -32,7 +29,6 @@ export default class PersistenceFactory {
         CartsDao = (await import("./mongo/CartsDao.js")).default;
         ProductsDao = (await import("./mongo/ProductsDao.js")).default;
         TicketsDao = (await import("./mongo/TicketsDao.js")).default;
-        ChatDao = (await import("./mongo/ChatDao.js")).default;
         break;
       }
     }
@@ -41,7 +37,6 @@ export default class PersistenceFactory {
       CartsDao,
       ProductsDao,
       TicketsDao,
-      ChatDao,
     };
   };
 }

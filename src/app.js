@@ -10,13 +10,12 @@ import productsRouter from "./routes/ProductsRouter.js";
 import cartsRouter from "./routes/CartRouter.js";
 import viewsRouter from "./routes/ViewsRouter.js";
 import SessionsRouter from "./routes/SessionsRouter.js";
-import chatRouter from "./routes/ChatRoutes.js";
 import usersRouter from "./routes/UsersRouter.js";
 
 import __dirname from "./utils.js";
 import config from "./config/config.js";
 import initializePassportStrategies from "./config/passport.config.js";
-import registerChatHandler from "./listeners/chat.listener.js";
+
 
 const app = express();
 
@@ -59,7 +58,6 @@ app.use("/", viewsRouter);
 app.use("/api/products", productsRouter);
 app.use("/api/carts", cartsRouter);
 app.use("/api/sessions", SessionsRouter);
-app.use("/api/chat", chatRouter);
 app.use("/api/users", usersRouter);
 
 app.use("/loggerTest", async (req, res) => {
