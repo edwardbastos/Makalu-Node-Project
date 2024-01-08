@@ -6,6 +6,6 @@ export const generateErrorCode = () => {
   return code;
 };
 
-export default {
+export const errorCodes = {
   ValidationError: generateErrorCode(),
 };

@@ -7,6 +7,8 @@ import { Strategy as GoogleStrategy } from "passport-google-oauth20";
 import { usersService, cartsService } from "../services/index.js";
 import authService from "../services/authService.js";
 import config from "./config.js";
+import { errorCodes } from "../dictionaries/errorCodes.js";
+
 
 const initializePassportStrategies = () => {
   passport.use(
@@ -98,6 +100,7 @@ const initializePassportStrategies = () => {
         secretOrKey: "jwtSecret",
       },
       async (payload, done) => {
+        console.log('JWT Strategy Payload:', payload);
         return done(null, payload);
       }
     )
@@ -110,7 +113,6 @@ const initializePassportStrategies = () => {
         clientID: config.github.CLIENT_ID,
         clientSecret: config.github.CLIENT_SECRET,
         callbackURL: "http://localhost:8080/api/sessions/githubcallback",
-        // passReqToCallback: true,
       },
       async (accessToken, refreshToken, profile, done) => {
         const email = profile._json.email;
@@ -125,16 +127,11 @@ const initializePassportStrategies = () => {
             password: "",
             admin: false,
           };
-          let cart;
 
-          if (req.cookies["cart"]) {
-            cart = req.cookies["cart"];
-          } else {
-            const cartResult = await cartsService.createCart();
-            cart = cartResult.id;
-          }
+          // Lógica para crear un carrito aquí, similar a la estrategia de registro local
+          const cartResult = await cartsService.createCart();
+          newUser.cart = cartResult.id;
 
-          newUser.cart = cart;
           const result = await usersService.createUser(newUser);
           return done(null, result);
         } else {
@@ -143,6 +140,7 @@ const initializePassportStrategies = () => {
       }
     )
   );
+
   passport.use(
     "google",
     new GoogleStrategy(
@@ -150,37 +148,44 @@ const initializePassportStrategies = () => {
         clientID: config.google.CLIENT_ID,
         clientSecret: config.google.CLIENT_SECRET,
         callbackURL: "http://localhost:8080/api/sessions/googlecallback",
-        // passReqToCallback: true,
       },
       async (req, accessToken, refreshToken, profile, done) => {
-        const { _json } = profile;
-        const email = _json.email;
-
-        const user = await usersService.getUserBy({ email: _json.email });
-        if (user) {
-          return done(null, user);
-        } else {
-          const newUser = {
-            firstName: _json.given_name,
-            lastName: _json.family_name,
-            email: _json.email,
-          };
-          let cart;
-
-          if (req.cookies["cart"]) {
-            cart = req.cookies["cart"];
+        try {
+          const { _json } = profile;
+          const user = await usersService.getUserBy({ email: _json.email });
+  
+          if (user) {
+            console.log("Usuario encontrado en Google:", user);
+            return done(null, user);
           } else {
-            const cartResult = await cartsService.createCart();
-            cart = cartResult.id;
+            const newUser = {
+              firstName: _json.given_name,
+              lastName: _json.family_name,
+              email: _json.email,
+            };
+  
+            let cart;
+            if (req.cookies && req.cookies["cart"]) {
+              cart = req.cookies["cart"];
+            } else {
+              const cartResult = await cartsService.createCart();
+              cart = cartResult.id;
+              res.cookie("cart", cart); 
+            }        
+  
+            newUser.cart = cart;
+            const result = await usersService.createUser(newUser);
+            console.log("Nuevo usuario creado en Google:", result);
+            return done(null, result);
           }
-
-          newUser.cart = cart;
-          const result = await usersService.createUser(newUser);
-          return done(null, result);
+        } catch (error) {
+          console.error("Error en la estrategia de Google:", error);
+          return done(error);
         }
       }
     )
   );
+  
 };
 
 export default initializePassportStrategies;

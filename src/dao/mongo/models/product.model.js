@@ -31,12 +31,13 @@ const schema = new mongoose.Schema(
       required: true,
     },
     thumbnail: {
-      type: String,
-      required: false,
+      type: Array,
+      default: []
     },
     status: {
       type: Boolean,
       default: true,
+      index:true
     },
     owner: {
       type: mongoose.SchemaTypes.ObjectId,

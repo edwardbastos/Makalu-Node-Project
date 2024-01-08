@@ -1,19 +1,51 @@
-<h1 class="title">Regístrate</h1>
+<link rel="stylesheet" href="/css/home.css">
 
-<form id="registerForm" class="formProducts">
-  <label class="label">Nombre</label>
-  <input class="controls" name="firstName" />
+<section class="main-social">
+  <div class="container-social">
+    <div class="back-box">
+      <div class="back-box-login">
+        <h3>¿Ya tienes una cuenta?</h3>
+        <p>Inicia sesión para entrar en la página</p>
+        <a href="/">
+          <button id="btn-login">Iniciar Sesión</button>
+        </a>
+      </div>
+      <div class="back-box-register">
+        <h3>¿Aún no tienes una cuenta?</h3>
+        <p>Regístrate para que puedas iniciar sesión</p>
+        <a href="/register">
+          <button id="btn-register">Regístrarse</button>
+        </a>
+      </div>
+    </div>
 
-  <label class="label">Apellido</label>
-  <input class="controls" name="lastName" />
-
-  <label class="label">Email</label>
-  <input class="controls" name="email" />
-
-  <label class="label">Contraseña</label>
-  <input class="controls" name="password" type="password" />
-
-  <input class="btn btn-success" type="submit" />
-</form>
+    <!--Formulario de Login y registro-->
+    <div class="container-login-register">
+      <!--Login-->
+      <form id="loginForm" class="login_Form">
+        <h2>Iniciar sesión</h2>
+        <input name="email" type="text" placeholder="email">
+        <input name="password" type="password" placeholder="password">
+        <input class="submitBtn" type="submit" value="Iniciar sesión"></input>
+        <button class="btn mb-5" type="button" onclick="restorePassword()"> 
+          ¿Olvidaste tu contraseña? Puedes restablecerla aqui
+        </button>
+        <a href="/api/sessions/github"><button class="btn">Iniciar con
+            GitHub<img class="social-img" src="/img/github.png" /></button></a>
+        <a href="/api/sessions/google"><button class="btn">Iniciar con
+            Google<img class="social-img" src="/img/google.png" /></button></a> 
+      </form>
+      <!--Register-->
+      <form id="registerForm" class="register_Form">
+        <h2>Regístrarse</h2>
+        <input name="firstName" placeholder="primer nombre" type="text">
+        <input name="lastName" placeholder="segundo nombre" type="text">
+        <input name="email" placeholder="email (user)" type="email">
+        <input name="password" placeholder="password" type="password">
+        <input class="submitBtn" type="submit" value="Registrar usuario"></input>
+      </form>
+    </div>
+  </div>
+</section>
 
 <script src="/js/register.js"></script>

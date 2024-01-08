@@ -29,8 +29,8 @@ const swaggerSpecOptions = {
   definition: {
     openapi: "3.0.1",
     info: {
-      title: "Distribuidora Bescos",
-      description: "Aplicación de Distribuidora Bescos, e-commerce",
+      title: "Makalu Impresoras",
+      description: "E-commerce sobre las mejores impresoras y fotocopiadoras para tu negocio!",
     },
   },
   apis: [`${__dirname}/docs/**/*.yml`],

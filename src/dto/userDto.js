@@ -1,18 +1,17 @@
 export default class UserDto {
   static getTokenDTOFrom = (user) => {
     const { _id, role, cart, email, firstName, lastName, documents } = user;
-    if (user.documents.length >= 5) {
-      user.isPremium = true;
-    } else {
-      user.isPremium = false;
-    }
+    
+    // Verifica si documents está definido y tiene una propiedad 'length'
+    const isPremium = documents && documents.length >= 5;
+
     return {
       name: `${firstName} ${lastName}`,
       id: _id,
       role: user.role,
       cart: user.cart,
       email: user.email,
-      isPremium: user.isPremium,
+      isPremium: isPremium,
     };
   };
 }

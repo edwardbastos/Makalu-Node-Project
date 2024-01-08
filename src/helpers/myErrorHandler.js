@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import { generateErrorCode } from "../dictionaries/errorCodes.js";
 import ErrorsDictionary from "../dictionaries/errors.js";
+import { errorCodes } from "../dictionaries/errorCodes.js"; 
 import __dirname from "../utils.js";
 
 class MyCustomError {
