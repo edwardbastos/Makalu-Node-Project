@@ -10,11 +10,18 @@
           <button id="btn-login">Iniciar Sesión</button>
         </a>
       </div>
+
       <div class="back-box-register">
         <h3>¿Aún no tienes una cuenta?</h3>
         <p>Regístrate para que puedas iniciar sesión</p>
         <a href="/register">
           <button id="btn-register">Regístrarse</button>
+        </a>
+        <a class="passport" href="/api/sessions/github">Registro con GitHub
+          <img class="social-img" src="/img/github.png" />
+        </a>
+        <a  href="/api/sessions/google">Registro con Google
+          <img class="social-img" src="/img/google.png" />
         </a>
       </div>
     </div>
@@ -27,13 +34,9 @@
         <input name="email" type="text" placeholder="email">
         <input name="password" type="password" placeholder="password">
         <input class="submitBtn" type="submit" value="Iniciar sesión"></input>
-        <button class="btn mb-5" type="button" onclick="restorePassword()"> 
+        <button class="btn mb-5" type="button" onclick="restorePassword()">
           ¿Olvidaste tu contraseña? Puedes restablecerla aqui
         </button>
-        <a href="/api/sessions/github"><button class="btn">Iniciar con
-            GitHub<img class="social-img" src="/img/github.png" /></button></a>
-        <a href="/api/sessions/google"><button class="btn">Iniciar con
-            Google<img class="social-img" src="/img/google.png" /></button></a> 
       </form>
       <!--Register-->
       <form id="registerForm" class="register_Form">
@@ -45,6 +48,10 @@
         <input class="submitBtn" type="submit" value="Registrar usuario"></input>
       </form>
     </div>
+
+
+
+
   </div>
 </section>
 

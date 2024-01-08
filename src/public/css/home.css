@@ -62,7 +62,22 @@
     font-weight: 300;
 }
 
-.back-box a button {
+.back-box div a {
+    flex-direction: column;
+    font-size: medium;
+    text-decoration: none;
+    color: white;
+    margin-top: 5px;
+    display: flex; /* Añadido */
+    align-items: center; /* Añadido */
+}
+
+.back-box div a img {
+    width: 1.5rem;
+    padding: 5px;
+}
+
+.back-box div a button {
     padding: 10px 40px;
     border: 2px solid #fff;
     font-size: 14px;
@@ -74,7 +89,7 @@
     transition: all 300ms;
 }
 
-.back-box a button:hover {
+.back-box div a button:hover {
     background: #fff;
     color: #b1c90e;
 }
@@ -132,6 +147,11 @@
     outline: none;
 }
 
+.social-img {
+    width: 1.5rem;
+    padding: 5px;
+}
+
 .btn {
     width: 100%;
     height: 20px;
@@ -139,11 +159,6 @@
     border-radius: 10px;
     border: none;
     color: gray;
-}
-
-.social-img {
-    width: 1.5rem;
-    padding: 5px;
 }
 
 .login_Form {
