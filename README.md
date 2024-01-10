@@ -4,7 +4,7 @@ This project is a web ecommerce application developed in Node.js using Express a
 
 ## Deployment
 
-The Makalu application has been deployed and is available at the following link: [Makalu on Railway](https://makalu-node-project.up.railway.app/profile).
+The Makalu application has been deployed and is available at the following link: [Makalu on Railway](https://makalu-node-project.up.railway.app).
 
 ## Key Features
 
