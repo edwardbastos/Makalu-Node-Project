@@ -18,19 +18,19 @@ The Makalu application has been deployed and is available at the following link:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/makalu-nodejs.git
+   git clone https://github.com/edwardbastos/Makalu-Node-Project.git
    ```
 
 2. Install dependencies:
 
    ```bash
-   cd makalu-nodejs
+   cd Makalu-Node-Project
    npm install
    ```
 
 3. Configure environment variables:
 
-   Create a `.env` file in the project root and configure the necessary environment variables. You can use the `.env.example` file as a reference.
+   Create a `.env` file in the project root and configure the necessary environment variables.
 
 4. Start the application:
 
@@ -38,7 +38,7 @@ The Makalu application has been deployed and is available at the following link:
    npm start
    ```
 
-   The application will be available at [http://localhost:3000](http://localhost:3000).
+   The application will be available at [http://localhost:8080](http://localhost:8080).
 
 ## Contributions
 
@@ -59,6 +59,3 @@ Thank you for your contribution!
 - MongoDB
 - Railway (Deployment Platform)
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
